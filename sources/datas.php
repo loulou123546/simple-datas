@@ -53,6 +53,28 @@ class Datas {
         return unlink(self::$config['path'] . $db . ".json");
     }
 
+    public static function get_INFO ($password, $db) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            return $result['INFO'];
+        }
+        else {
+            return false;
+        }
+    }
+    public static function set_INFO ($password, $db, $version, $lastchange) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            $result['INFO']['VERSION'] = $version;
+            $result['INFO']['LASTCHANGE'] = $lastchange;
+            self::set_content($db, json_encode($result));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     /*************************************
      *                                   *
