@@ -2,17 +2,46 @@
 
 class Datas {
 
+    /*************************************
+     *                                   *
+     *   stockage des données de Datas   *
+     *                                   *
+     *************************************/
     private static $config = array(
         "password" => "password",
         "path" => "data/"
     );
 
+
+    /*************************************
+     *                                   *
+     *          Fonction public          *
+     *                                   *
+     *************************************/
     public static function get_ALL ($password, $db) {
         if(self::connect($password)){
             return json_decode(self::get_content($db));
         }
+        else {
+            return false;
+        }
+    }
+    public static function set_ALL ($password, $db, $value) {
+        if(self::connect($password)){
+            self::set_content(json_encode($value));
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
+
+    /*************************************
+     *                                   *
+     *    Allow you to connect on DB     *
+     *                                   *
+     *************************************/
     private static function connect ($password) {
         if(self::$config['password'] === $password){
             return true;
@@ -22,6 +51,12 @@ class Datas {
         }
     }
 
+
+    /*************************************
+     *                                   *
+     *   Fonction d'accés au fichiers    *
+     *                                   *
+     *************************************/
     private static function get_content ($db) {
         if(file_exists(self::$config['path'] . $db . ".json")){
             $file = fopen(self::$config['path'] . $db . ".json");
@@ -42,6 +77,6 @@ class Datas {
 
 
 
-}
 
+}
 ?>
