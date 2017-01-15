@@ -41,6 +41,18 @@ class Datas {
         }
     }
 
+    public static function new_DB ($password, $db) {
+        if(self::connect($password)){
+            return self::set_content($db, '{"INFO":{"VERSION":"1.0.0","LASTCHANGE":"01/01/2000"},"DATA":[]}');
+        }
+        else {
+            return false;
+        }
+    }
+    public static function delete_DB ($password, $db) {
+        return unlink(self::$config['path'] . $db . ".json");
+    }
+
 
     /*************************************
      *                                   *
