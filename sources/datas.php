@@ -20,15 +20,20 @@ class Datas {
      *************************************/
     public static function get_ALL ($password, $db) {
         if(self::connect($password)){
-            return json_decode(self::get_content($db));
+            return json_decode(self::get_content($db), true);
         }
         else {
             return false;
         }
     }
-    public static function set_ALL ($password, $db, $value) {
+    public static function set_ALL ($password, $db, $value, $isJSON = false) {
         if(self::connect($password)){
-            self::set_content(json_encode($value));
+            if($isJSON == true){
+                self::set_content($db, $value);
+            }
+            else {
+                self::set_content($db, json_encode($value));
+            }
             return true;
         }
         else {
@@ -59,7 +64,7 @@ class Datas {
      *************************************/
     private static function get_content ($db) {
         if(file_exists(self::$config['path'] . $db . ".json")){
-            $file = fopen(self::$config['path'] . $db . ".json");
+            $file = fopen(self::$config['path'] . $db . ".json", "r");
             $content = fread($file, filesize(self::$config['path'] . $db . ".json"));
             fclose($file);
             return $content;
@@ -69,7 +74,7 @@ class Datas {
         }
     }
     private static function set_content ($db, $value = "") {
-        $file = fopen(self::$config['path'] . $db . ".json");
+        $file = fopen(self::$config['path'] . $db . ".json", "w");
         fwrite($file, $value);
         fclose($file);
         return true;
