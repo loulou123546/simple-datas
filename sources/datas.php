@@ -53,6 +53,79 @@ class Datas {
         return unlink(self::$config['path'] . $db . ".json");
     }
 
+    public static function get_INFO ($password, $db) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            return $result['INFO'];
+        }
+        else {
+            return false;
+        }
+    }
+    public static function set_INFO ($password, $db, $version, $lastchange) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            $result['INFO']['VERSION'] = $version;
+            $result['INFO']['LASTCHANGE'] = $lastchange;
+            self::set_content($db, json_encode($result));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public static function add_ITEM ($password, $db, $value, $isJSON = false) {
+        if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            if($isJSON){
+                $content['DATA'][] = json_decode($value, true);
+            } else {
+                $content['DATA'][] = $value;
+            }
+            self::set_content($db, json_encode($content));
+            return count($content['DATA']) - 1;
+        }
+        else {
+            return false;
+        }
+    }
+    public static function delete_ITEM ($password, $db, $ID) {
+        if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            $content['DATA'][$ID] = "";
+            self::set_content($db, json_encode($content));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public static function get_ITEM ($password, $db, $ID) {
+        if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            return $content['DATA'][$ID];
+        }
+        else {
+            return false;
+        }
+    }
+    public static function set_ITEM ($password, $db, $ID, $value, $isJSON = false) {
+        if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            if($isJSON){
+                $content['DATA'][$ID] = json_decode($value, true);
+            } else {
+                $content['DATA'][$ID] = $value;
+            }
+            self::set_content($db, json_encode($content));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     /*************************************
      *                                   *
