@@ -74,6 +74,30 @@ class Datas {
             return false;
         }
     }
+    
+    public static function get_DATA ($password, $db) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            return $result['DATA'];
+        }
+        else {
+            return false;
+        }
+    }
+    public static function set_DATA ($password, $db, $value, $isJSON = false) {
+        if(self::connect($password)){
+            $result = json_decode(self::get_content($db), true);
+            if($isJSON){
+              $value = json_decode($value, true);
+            }
+            $result['DATA'] = $value;
+            self::set_content($db, json_encode($result));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     public static function add_ITEM ($password, $db, $value, $isJSON = false) {
         if(self::connect($password)){
@@ -120,6 +144,47 @@ class Datas {
             }
             self::set_content($db, json_encode($content));
             return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    // $value = array('["USER"]["PSEUDO"] == "loulou"','["USER"]["MDP" == "password"')
+    public static function find_ID ($password, $db, $value) {
+      if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            $result = array();
+            foreach($content['DATA'] as $ID => $item){
+              $valid = true;
+              foreach($value as $rule){
+                if(eval("if(\$item".$rule."){return true;}else{return false;}") == false){
+                  $valid = false;
+                }
+              }
+              if($valid){
+                $result[] = $item;
+              }
+            }
+            return $result;
+        }
+        else {
+            return false;
+        }
+    }
+    // $value = array('["USER"]["PSEUDO"] == "loulou"','["USER"]["MDP" == "password"')
+    public static function find_ITEM ($password, $db, $value) {
+      if(self::connect($password)){
+            $content = json_decode(self::get_content($db), true);
+            $result = array();
+            foreach($content['DATA'] as $ID => $item){
+              foreach($value as $rule){
+                if(eval("if(\$item".$rule."){return true;}else{return false;}")){
+                  $result[] = $item;
+                }
+              }
+            }
+            return $result;
         }
         else {
             return false;
