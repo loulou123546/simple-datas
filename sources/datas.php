@@ -8,7 +8,7 @@ class Datas {
      *                                   *
      *************************************/
     private static $config = array(
-        "password" => "password",
+        "password" => "loulou123546",
         "path" => "data/"
     );
 
@@ -41,6 +41,11 @@ class Datas {
         }
     }
 
+    /**
+    * @param string $password mot de passe
+    * @param string $db nom de base de données
+    * @return boolean true si réussi, false en cas de pb
+    */
     public static function new_DB ($password, $db) {
         if(self::connect($password)){
             return self::set_content($db, '{"INFO":{"VERSION":"1.0.0","LASTCHANGE":"01/01/2000"},"DATA":[]}');
@@ -117,7 +122,7 @@ class Datas {
     public static function delete_ITEM ($password, $db, $ID) {
         if(self::connect($password)){
             $content = json_decode(self::get_content($db), true);
-            $content['DATA'][$ID] = "";
+            array_splice($content['DATA'], $ID, 1);
             self::set_content($db, json_encode($content));
             return true;
         }
@@ -163,7 +168,7 @@ class Datas {
                 }
               }
               if($valid){
-                $result[] = $item;
+                $result[] = $ID;
               }
             }
             return $result;
@@ -178,10 +183,14 @@ class Datas {
             $content = json_decode(self::get_content($db), true);
             $result = array();
             foreach($content['DATA'] as $ID => $item){
+              $valid = true;
               foreach($value as $rule){
-                if(eval("if(\$item".$rule."){return true;}else{return false;}")){
-                  $result[] = $item;
+                if(eval("if(\$item".$rule."){return true;}else{return false;}") == false){
+                  $valid = false;
                 }
+              }
+              if($valid){
+                $result[] = $item;
               }
             }
             return $result;
