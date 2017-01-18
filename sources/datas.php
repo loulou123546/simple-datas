@@ -8,7 +8,7 @@ class Datas {
      *                                   *
      *************************************/
     private static $config = array(
-        "password" => "loulou123546",
+        "password" => "PASSWORD",
         "path" => "data/"
     );
 
