@@ -1,9 +1,9 @@
 # get_ALL  
 
 > ## synopsis : `Datas::get_ALL( $password , $database )`  
-> ### `$password` : *string* -> contient le mot de passe  
-> ### `$database` : *string* -> contient le nom de la DB à modifier  
-> ### `return` : *array | boolean* -> retourne faux si l'opération à échoué, sinon un *asscociative array* contenant la DB  
+> `$password` : *string* -> contient le mot de passe  
+> `$database` : *string* -> contient le nom de la DB à modifier  
+> `return` : *array | boolean* -> retourne faux si l'opération à échoué, sinon un *asscociative array* contenant la DB  
 
 Cette fonction retourne le contenu du fichier `.json` .  
 

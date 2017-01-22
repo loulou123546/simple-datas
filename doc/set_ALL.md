@@ -1,11 +1,11 @@
 # set_ALL
 
 > ## synopsis : `Datas::set_ALL( $password , $database , $value , $isJSON = false )`  
-> ### `$password` : *string* -> contient le mot de passe  
-> ### `$database` : *string* -> contient le nom de la DB à modifier  
-> ### `$value` : *array | string* -> contient le nouveau contenu de la DB  
-> ### `$isJSON` : *boolean* -> si vrai, `$value` est de type *string* et contient du JSON valide. sinon `$value` est un *array*  
-> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
+> `$password` : *string* -> contient le mot de passe  
+> `$database` : *string* -> contient le nom de la DB à modifier  
+> `$value` : *array | string* -> contient le nouveau contenu de la DB  
+> `$isJSON` : *boolean* -> si vrai, `$value` est de type *string* et contient du JSON valide. sinon `$value` est un *array*  
+> `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
 
 Cette fonction modifie le contenu du fichier `.json` par `$value`. Si le contenu ne respecte pas la norme Datas, les autres fonction rique de ne plus fonctionner correctement.
 
