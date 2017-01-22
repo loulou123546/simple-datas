@@ -1,6 +1,6 @@
 # delete_DB
 
-> **synopsis** : `Datas::delete_DB( $password , $database )`  
+> **synopsis : `Datas::delete_DB( $password , $database )`**  
 > `$password` : *string* -> contient le mot de passe  
 > `$database` : *string* -> contient le nom de la DB à supprimer  
 > `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
