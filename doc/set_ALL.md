@@ -53,7 +53,7 @@ folder
      |- maDB.json
 ```
 
-**une_autre_DB :**  
+**maDB :**  
 
 ```JSON
 ["FRANCE", "RUSSIE", "USA"]
