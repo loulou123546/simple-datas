@@ -4,7 +4,7 @@
 > `$password` : *string* -> contient le mot de passe  
 > `$database` : *string* -> contient le nom de la DB  
 > `$value` : *array of string* -> contient la recherche à effectuer  
-> `return` : *boolean | array* -> retourne faux si l'opération à échoué, sinon retourne le contenu de l'ITEM.  
+> `return` : *boolean | array* -> retourne faux si l'opération à échoué, sinon retourne les IDs des ITEMs valides.  
 
 Cette fonction cherche les ITEMs correspondant à la recherche et retourne leur ID.  
 
