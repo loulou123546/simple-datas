@@ -2,7 +2,7 @@
 
 > ## synopsis : `Datas::new_DB( $password , $database )`  
 
-> ### `$password` : *string* -> contient le mot de passe  
+> `$password` : *string* -> contient le mot de passe  
 > `$database` : *string* -> contient le nom de la DB à créer  
 > `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
 
