@@ -1,9 +1,9 @@
 # new_DB
 
 > ## synopsis : `Datas::new_DB( $password , $database )`  
-> ### `$password` : *string* -> contient le mot de passe  
-> ### `$database` : *string* -> contient le nom de la DB à créer  
-> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
+> `$password` : *string* -> contient le mot de passe  
+> `$database` : *string* -> contient le nom de la DB à créer  
+> `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
 
 Comme son nom l'indique, cette fonction créer un nouveau fichier `.json` avec le modèle de base pour permettre à Datas de correctement fonctionner.
 
