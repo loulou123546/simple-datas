@@ -1,9 +1,9 @@
 # delete_DB
 
-> ## synopsis : `Datas::delete_DB( $password , $database )`
-> ### `$password` : *string* -> contient le mot de passe
-> ### `$database` : *string* -> contient le nom de la DB à supprimer
-> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon
+> ## synopsis : `Datas::delete_DB( $password , $database )`  
+> ### `$password` : *string* -> contient le mot de passe  
+> ### `$database` : *string* -> contient le nom de la DB à supprimer  
+> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
 
 Comme son nom l'indique, cette fonction **supprime** le fichier `.json` correspondant au nom de la database. Il est impossible de récupérer la DB après cette opération.
 
@@ -24,7 +24,8 @@ folder
 
 ## script :
 
-**index.php :**
+**index.php :**  
+
 ```php
 <?php
 require("Datas.php");

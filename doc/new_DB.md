@@ -1,9 +1,9 @@
 # new_DB
 
-> ## synopsis : `Datas::new_DB( $password , $database )`
-> ### `$password` : *string* -> contient le mot de passe
-> ### `$database` : *string* -> contient le nom de la DB à créer
-> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon
+> ## synopsis : `Datas::new_DB( $password , $database )`  
+> ### `$password` : *string* -> contient le mot de passe  
+> ### `$database` : *string* -> contient le nom de la DB à créer  
+> ### `return` : *boolean* -> retourne faux si l'opération à échoué, vrai sinon  
 
 Comme son nom l'indique, cette fonction créer un nouveau fichier `.json` avec le modèle de base pour permettre à Datas de correctement fonctionner.
 
@@ -23,7 +23,8 @@ folder
 
 ## script :
 
-**index.php :**
+**index.php :**  
+
 ```php
 <?php
 require("Datas.php");
@@ -43,7 +44,8 @@ folder
      |- une_autre_DB.json
 ```
 
-**une_autre_DB :**
+**une_autre_DB :**  
+
 ```JSON
 { "INFO" : {"VERSION" : "1.0.0", "LASTCHANGE" : "01/01/2000"}, "DATA" : []}
 ```
