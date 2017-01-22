@@ -1,6 +1,6 @@
 # set_ALL
 
-> ## synopsis : `Datas::set_ALL( $password , $database , $value , $isJSON = false )`  
+> **synopsis : `Datas::set_ALL( $password , $database , $value , $isJSON = false )`**  
 > `$password` : *string* -> contient le mot de passe  
 > `$database` : *string* -> contient le nom de la DB à modifier  
 > `$value` : *array | string* -> contient le nouveau contenu de la DB  
