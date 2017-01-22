@@ -45,14 +45,6 @@ Datas::set_DATA("PASSWORD", "maDB", array(array("PAYS" => "USA", "CONTINENT" => 
 
 ## après :
 
-```
-folder
- |- Datas.php
- |- index.php
- |- data
-     |- maDB.json
-```
-
 **maDB :**  
 
 ```JSON
