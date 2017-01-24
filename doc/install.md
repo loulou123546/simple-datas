@@ -1,5 +1,6 @@
 # Installation et la configuration  
-
+  
+  
 ### Installation  
 
 Pour l'instant, il n'y a pas à proprement parler d'installation. Mais voici la base :  
