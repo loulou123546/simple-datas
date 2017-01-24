@@ -1,15 +1,9 @@
-# :fr: Bienvenue sur le Wiki de Simple Datas  
+# Bienvenue sur le Wiki de Simple Datas  
 
 ### Simple Datas est actuellement en version `0.3_dev`  
 ### La documentation quant à elle correspond à la `1.0.0`  
 
 ---
-
-# :us: Welcome to the Wiki of Simple Datas  
-
-### Simple Datas is actually on version `0.3_dev`  
-### The documentation is on valid for `1.0.0`  
-
 
 # L'API  
 
