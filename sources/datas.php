@@ -200,6 +200,36 @@ class Datas {
         }
     }
 
+    public static function setKey ($password, $key, $value) {
+        if(self::connect($password)){
+            $content = json_decode(self::get_content("__keys__"), true);
+            $content[$key] = $value;
+            self::set_content("__keys__", json_encode($content));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public static function getKey ($password, $key) {
+        if(self::connect($password)){
+            $keys = json_decode(self::get_content("__keys__"), true);
+            return $keys[$key];
+        }
+        else {
+            return false;
+        }
+    }
+    public static function isKey ($password, $key) {
+        if(self::connect($password)){
+            $keys = json_decode(self::get_content("__keys__"), true);
+            return isset($keys[$key]);
+        }
+        else {
+            return false;
+        }
+    }
+
 
     /*************************************
      *                                   *
