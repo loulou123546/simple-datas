@@ -45,3 +45,11 @@
 [Trouver les IDs correspondant](https://simple-work.github.io/simple-datas/doc/find_ID) : `Datas::find_ID($password, $database, $search)`  
 
 [Trouver les ITEMs correspondant](https://simple-work.github.io/simple-datas/doc/find_ITEM) : `Datas::find_ITEM($password, $database, $search)`  
+
+---
+
+[Créer / Changer la valeur d'une clé](https://simple-work.github.io/simple-datas/doc/setKey) : `Datas::setKey($password, $key, $value)`  
+
+[Récupérer la valeur d'une clé](https://simple-work.github.io/simple-datas/doc/getKey) : `Datas::getKey($password, $key)`  
+
+[Vérifie si la clé existe](https://simple-work.github.io/simple-datas/doc/isKey) : `Datas::isKey($password, $key)`  
